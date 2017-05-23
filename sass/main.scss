@@ -1,0 +1,135 @@
+$breakpoint--small: 480px;
+$breakpoint--medium: 720px;
+$breakpoint--large: 1020px;
+
+$color--main: #F3E7DB;
+$color--pink: #DA928B;
+$color--blue: #536373;
+$color--blue-light:#A2B2BF;
+$color--blue-dark: #1B2A3F;
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#canvas{
+  border:0.5px solid black;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  font-family: Raleway,sans-serif;
+  background-color: $color--main;
+}
+.title{
+  padding: 20px;
+  color: $color--blue-dark;
+}
+p{
+  color: $color--blue-dark;
+  margin: 0;
+}
+.header{
+  background-color: $color--pink;
+  width: 100%;
+  position: absolute; 
+  left: 0 ; right: 0; top: 0;
+  text-align: center;
+}
+.title{
+  margin: 0;
+}
+.main{
+  background-color: $color--main;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.board-wrapper{
+  display: flex;
+}
+.footer{
+  width: 100%;
+  position: absolute; 
+  left: 0 ; right: 0; bottom: 0;
+}
+#stats, .buttons {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#stats{
+  border-radius: 15px 15px 0 0;
+  height:18px;
+  text-align: center;
+  background-color: $color--blue-light;
+  -webkit-transition: height 0.5s;
+}
+.buttons{
+  display: table; 
+  table-layout:fixed;
+}
+button{
+  color:$color--main;
+  outline: none;
+  height: 50px;
+  width: 50%;
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: table-cell;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: $color--blue;
+}
+button:active{
+  background-color: $color--blue-dark;
+}
+table, th, td{
+  border: 1px solid $color--blue;
+  border-collapse: collapse;
+}
+table{
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 300px;
+}
+.filled{
+  background-color: #000;
+}
+.rotated0{
+  transform:rotate(0deg);
+}
+.rotated90{
+  transform:rotate(90deg);
+}
+.rotated180{
+  transform:rotate(180deg);
+}
+.rotated270{
+  transform:rotate(270deg);
+}
+@media all and ( min-width: $breakpoint--medium ) {
+  table{
+    width: 450px;
+    height: 450px;
+  }
+  .title{
+    font-size: 50px;
+  }
+  #stats, .buttons {
+    width: 50%;
+  }
+}
