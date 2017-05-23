@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box; }
+
+#canvas {
+  border: 0.5px solid black; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+body {
+  font-family: Raleway,sans-serif;
+  background-color: #F3E7DB; }
+
+.title {
+  padding: 20px;
+  color: #1B2A3F; }
+
+p {
+  color: #1B2A3F;
+  margin: 0; }
+
+.header {
+  background-color: #DA928B;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center; }
+
+.title {
+  margin: 0; }
+
+.main {
+  background-color: #F3E7DB;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%; }
+
+.board-wrapper {
+  display: -ms-flexbox;
+  display: flex; }
+
+.footer {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+#stats, .buttons {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+
+#stats {
+  border-radius: 15px 15px 0 0;
+  height: 18px;
+  text-align: center;
+  background-color: #A2B2BF;
+  -webkit-transition: height 0.5s; }
+
+.buttons {
+  display: table;
+  table-layout: fixed; }
+
+button {
+  color: #F3E7DB;
+  outline: none;
+  height: 50px;
+  width: 50%;
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: table-cell;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #536373; }
+
+button:active {
+  background-color: #1B2A3F; }
+
+table, th, td {
+  border: 1px solid #536373;
+  border-collapse: collapse; }
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 300px; }
+
+.filled {
+  background-color: #000; }
+
+.rotated0 {
+  transform: rotate(0deg); }
+
+.rotated90 {
+  transform: rotate(90deg); }
+
+.rotated180 {
+  transform: rotate(180deg); }
+
+.rotated270 {
+  transform: rotate(270deg); }
+
+@media all and (min-width: 720px) {
+  table {
+    width: 450px;
+    height: 450px; }
+  .title {
+    font-size: 50px; }
+  #stats, .buttons {
+    width: 50%; } }
