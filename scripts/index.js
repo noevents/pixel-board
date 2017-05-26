@@ -15,24 +15,23 @@ function runTimer() {
 function timeDigits(num){
   return num<10 ? `0${num}` : num
 }
-
 class PixelBoard{
-  constructor(size, id){
+  constructor(id){
     this.id = id
-    this.size = size
     this.statsSown = false;
     this.stats = document.createElement('div')
     this.statsPanel = document.getElementById('stats')
     this.canvas = document.createElement('canvas')
     this.canvasSize = 200
     this.counter = document.createElement('p')
-    this.boardWrapper = document.createElement('div');
-    this.board = document.createElement('table');
     this.degrees = ['rotated0', 'rotated90', 'rotated180', 'rotated270']
     this.rotatePos = 0
-    this.filled = []
   }
-  render(){
+  render(size){
+    this.filled = []
+    this.size = size
+    this.boardWrapper = document.createElement('div');
+    this.board = document.createElement('table'); 
     this.boardWrapper.id = this.id
     this.boardWrapper.classList = 'board-wrapper'
     this.board.classList = 'rotated0'
@@ -112,12 +111,17 @@ class PixelBoard{
     return btn
   }
 }
-
-const drawBoard = new PixelBoard(4, 'board1')
 let footer = document.getElementsByClassName("footer")[0]
 let btns = document.getElementsByClassName("buttons")[0]
 let main = document.getElementsByClassName("main")[0]
+const drawBoard = new PixelBoard('board1')
+let form = document.forms['settings']
+main.appendChild(drawBoard.render(10)) 
+form.onsubmit = function(e){
+  e.preventDefault()
+  main.removeChild(document.getElementById('board1'))
+  main.appendChild(drawBoard.render(form.size.value > 50?50:form.size.value)) 
+}
 
-main.appendChild(drawBoard.render())
 btns.appendChild(drawBoard.rotateBtn())
 btns.appendChild(drawBoard.statsBtn())
