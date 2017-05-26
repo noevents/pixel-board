@@ -14,15 +14,13 @@ body {
   font-family: Raleway,sans-serif;
   background-color: #F3E7DB; }
 
-.title {
-  padding: 20px;
-  color: #1B2A3F; }
-
 p {
   color: #1B2A3F;
   margin: 0; }
 
 .header {
+  padding: 10px 0;
+  color: #1B2A3F;
   background-color: #DA928B;
   width: 100%;
   position: absolute;
@@ -33,6 +31,9 @@ p {
 
 .title {
   margin: 0; }
+
+#size {
+  width: 51px; }
 
 .main {
   background-color: #F3E7DB;
@@ -75,19 +76,21 @@ p {
 button {
   color: #F3E7DB;
   outline: none;
-  height: 50px;
-  width: 50%;
   border: none;
   box-shadow: none;
   text-decoration: none;
   text-transform: uppercase;
-  display: table-cell;
-  font-size: 16px;
   cursor: pointer;
   background-color: #536373; }
 
 button:active {
   background-color: #1B2A3F; }
+
+#rotate, #show-stats {
+  height: 50px;
+  width: 50%;
+  display: table-cell;
+  font-size: 16px; }
 
 table, th, td {
   border: 1px solid #536373;
@@ -116,8 +119,8 @@ table {
 
 @media all and (min-width: 720px) {
   table {
-    width: 450px;
-    height: 450px; }
+    width: 70vh;
+    height: 70vh; }
   .title {
     font-size: 50px; }
   #stats, .buttons {
